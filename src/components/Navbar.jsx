@@ -33,11 +33,19 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     if (isDropdownOpen) setIsDropdownOpen(false);
+    
+    // Prevent body scroll when mobile menu is open
+    if (!isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
   };
 
   const closeAllMenus = () => {
     setIsMobileMenuOpen(false);
     setIsDropdownOpen(false);
+    document.body.style.overflow = 'unset';
   };
 
   const scrollToSection = (sectionId) => {
