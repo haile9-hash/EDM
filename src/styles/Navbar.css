@@ -6,7 +6,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky; /* This works for desktop */
+  position: sticky;
   top: 0;
   z-index: 1000;
   height: 60px;
@@ -199,27 +199,25 @@ nav ul li a,
 
 /* Mobile menu active state */
 @media (max-width: 768px) {
-  /* --- NEW FIX: MAKE HEADER FIXED ON MOBILE --- */
-  header {
-    position: fixed; /* This locks the header to the top of the screen */
-    width: 100%;     /* This makes sure it uses the full screen width */
-  }
-  /* --- END OF NEW FIX --- */
-
+  /* --- IMPROVED FIX START --- */
   .logo {
+    /* This allows the logo container to shrink and gives it priority for space */
     flex: 1; 
-    min-width: 0;
+    min-width: 0; /* Prevents the logo from overflowing its container */
   }
 
   .logo span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* This set of rules will truncate long text with "..." */
+    white-space: nowrap;      /* 1. Keep text on one line */
+    overflow: hidden;         /* 2. Hide the part that overflows */
+    text-overflow: ellipsis;  /* 3. Show "..." for the hidden part */
   }
   
   .mobile-menu-btn {
+      /* This ensures the button itself does not get squished */
       flex-shrink: 0;
   }
+  /* --- IMPROVED FIX END --- */
 
   .mobile-menu-btn {
     display: block;
