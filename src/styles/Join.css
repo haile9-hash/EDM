@@ -1,0 +1,204 @@
+/* src/styles/Join.css */
+:root {
+  --primary-color: #e67e22;
+  --primary-hover: #d35400;
+  --primary-gradient-end: #f39c12;
+  --primary-rgba-light: rgba(230, 126, 34, 0.08);
+  --background-color: #ffffff; /* updated to white */
+  --card-background: #ffffff;
+  --text-color: #34495e; /* updated header text color */
+  --subtle-text: #6c757d;
+  --border-color: #e9ecef;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  --border-radius: 16px;
+}
+
+/* ========== CONTAINER ========== */
+.join-container {
+  width: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* ========== HEADER ========== */
+.join-header-simple {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.join-header-simple h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color); /* pure color instead of gradient */
+}
+
+/* ========== FILTERS ========== */
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.filter-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  background-color: var(--card-background);
+  color: var(--subtle-text);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-button:hover {
+  background-color: var(--primary-rgba-light);
+  color: var(--primary-color);
+}
+
+.filter-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ========== ACTIVITY CARDS ========== */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.activity-card {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--primary-color);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.activity-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-emoji {
+  font-size: 2.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background-color: var(--primary-rgba-light);
+}
+
+.category-tag {
+  background-color: var(--primary-rgba-light);
+  color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ========== JOIN FORM ========== */
+/* ========== JOIN FORM ========== */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.join-form-container {
+  background: var(--card-background);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--subtle-text);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* ========== CTA ========== */
+.join-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.join-cta h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.primary-button {
+  padding: 0.9rem 1.5rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.primary-button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.03);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .join-header-simple h1 {
+    font-size: 1.6rem;
+  }
+
+  .activity-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .join-form-container {
+    padding: 1.5rem 1rem;
+  }
+}

@@ -1,0 +1,135 @@
+/* Color Variables */
+:root {
+  --primary-orange: #FF6000;
+  --primary-blue: rgb(17, 10, 10);
+  --light-orange: #FFE5D9;
+  --light-blue: #E0F2FE;
+  --dark-blue:#34495e;
+}
+
+.partners-section {
+  padding: 4rem 1rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.partners-header {
+  margin-bottom: 3rem;
+}
+
+.partners-header h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+}
+
+.partners-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-orange);
+}
+
+.partners-container {
+  position: relative;
+  padding: 1rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partners-scroll {
+  display: flex;
+  gap: 2rem;
+  animation: scrollPartners 30s linear infinite;
+  width: max-content;
+}
+
+.partner-card {
+  min-width: 200px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+}
+
+.logo-container {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--light-orange);
+}
+
+.logo-container img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.partner-name {
+  color: var(--dark-blue);
+  font-weight: 500;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+@keyframes scrollPartners {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 8 - 2rem * 8));
+  }
+}
+
+.partners-scroll.paused {
+  animation-play-state: paused;
+}
+
+/* Gradient edges */
+.partners-container::before,
+.partners-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-container::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.partners-container::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .partners-header h2 {
+    font-size: 2rem;
+  }
+  
+  .partner-card {
+    min-width: 160px;
+  }
+}
