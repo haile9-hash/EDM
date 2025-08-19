@@ -240,4 +240,4 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
   );
 }
 
-export default Navbar;"
+export default Navbar;
