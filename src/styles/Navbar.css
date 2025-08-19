@@ -197,29 +197,27 @@ nav ul li a,
   padding-left: 20px;
 }
 
-
-/* --- FIX START --- */
-/* The fixes are inside the mobile media queries below */
-/* --- FIX END --- */
-
-
 /* Mobile menu active state */
 @media (max-width: 768px) {
-  /* --- FIX START --- */
+  /* --- IMPROVED FIX START --- */
   .logo {
-    /* Allows the logo container to shrink and stops it from pushing other elements off-screen */
-    flex-shrink: 1;
-    min-width: 0; /* This is a key fix for preventing flexbox overflow */
-    margin-right: 10px; /* Adds a small gap between the logo text and the hamburger button */
+    /* This allows the logo container to shrink and gives it priority for space */
+    flex: 1; 
+    min-width: 0; /* Prevents the logo from overflowing its container */
   }
 
   .logo span {
-    /* Allows the long title text to wrap onto a new line instead of overflowing */
-    white-space: normal;
-    font-size: 15px; /* Makes the font slightly smaller to fit better */
-    line-height: 1.2; /* Adjusts the line spacing for wrapped text */
+    /* This set of rules will truncate long text with "..." */
+    white-space: nowrap;      /* 1. Keep text on one line */
+    overflow: hidden;         /* 2. Hide the part that overflows */
+    text-overflow: ellipsis;  /* 3. Show "..." for the hidden part */
   }
-  /* --- FIX END --- */
+  
+  .mobile-menu-btn {
+      /* This ensures the button itself does not get squished */
+      flex-shrink: 0;
+  }
+  /* --- IMPROVED FIX END --- */
 
   .mobile-menu-btn {
     display: block;
@@ -272,10 +270,7 @@ nav ul li a,
 
 @media (max-width: 480px) {
   .logo span {
-    /* --- FIX START --- */
-    /* Further reduces font size on the smallest screens for a better fit */
-    font-size: 14px;
-    /* --- FIX END --- */
+    font-size: 16px;
   }
   
   .logo img {
