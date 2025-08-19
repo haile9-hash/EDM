@@ -90,7 +90,7 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
     <header className={`header ${scrolled && isHomePage ? "scrolled" : ""}`}>
       <div className="logo">
         <img src={Logo} alt="Logo" />
-        <span>Enate Debremarkos Children Village</span>
+        <span className="logo-text">Enate Debremarkos Children Village</span>
       </div>
       
       <button 
