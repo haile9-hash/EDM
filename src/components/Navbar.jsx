@@ -7,23 +7,12 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const location = useLocation();
 
   // Update home page status when location changes
   useEffect(() => {
     setIsHomePage(location.pathname === "/");
   }, [location, setIsHomePage]);
-
-  // Check if device is mobile
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Scroll effect only on home page
   useEffect(() => {
@@ -44,19 +33,11 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     if (isDropdownOpen) setIsDropdownOpen(false);
-    
-    // Prevent body scroll when mobile menu is open
-    if (!isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
   };
 
   const closeAllMenus = () => {
     setIsMobileMenuOpen(false);
     setIsDropdownOpen(false);
-    document.body.style.overflow = 'unset';
   };
 
   const scrollToSection = (sectionId) => {
@@ -101,9 +82,7 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
     <header className={`header ${scrolled && isHomePage ? "scrolled" : ""}`}>
       <div className="logo">
         <img src={Logo} alt="Logo" />
-        <span className="logo-text">
-          {isMobile ? "Enate Children Village" : "Enate Debremarkos Children Village"}
-        </span>
+        <span>Enate Debremarkos Children Village</span>
       </div>
       
       <button 
