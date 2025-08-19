@@ -7,28 +7,12 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
   const location = useLocation();
 
   // Update home page status when location changes
   useEffect(() => {
     setIsHomePage(location.pathname === "/");
   }, [location, setIsHomePage]);
-
-  // Check for mobile view
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768);
-      // Close mobile menu when resizing to desktop view
-      if (window.innerWidth > 768) {
-        setIsMobileMenuOpen(false);
-        document.body.style.overflow = 'unset';
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Scroll effect only on home page
   useEffect(() => {
@@ -41,19 +25,6 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
-
-  // Prevent body scrolling when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMobileMenuOpen]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -122,10 +93,8 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
         {isMobileMenuOpen ? "✕" : "☰"}
       </button>
 
-      <div 
-        className={`mobile-menu-overlay ${isMobileMenuOpen ? "active" : ""}`} 
-        onClick={closeAllMenus}
-      ></div>
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? "active" : ""}`} 
+           onClick={closeAllMenus}></div>
 
       <nav className={`navbar ${isMobileMenuOpen ? "active" : ""}`}>
         <ul>
@@ -146,41 +115,26 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
           </li>
           
           <li className="dropdown">
-            <div
-              className={`dropdown-toggle ${isAboutPageActive() ? "active" : ""} ${isSectionActive('about')}`}
+            <Link
+              to="/about"
               onClick={(e) => {
-                if (isMobileView) {
+                if (window.innerWidth > 768) {
                   e.preventDefault();
                   toggleDropdown();
                 }
+                closeAllMenus();
               }}
+              className={`dropdown-toggle ${isAboutPageActive() ? "active" : ""} ${isSectionActive('about')}`}
             >
-              <Link
-                to="/about"
-                onClick={(e) => {
-                  if (!isMobileView) {
-                    e.preventDefault();
-                    toggleDropdown();
-                  }
-                }}
-              >
-                About Us
-              </Link>
-              {isMobileView && (
-                <span className="dropdown-arrow" onClick={toggleDropdown}>
-                  {isDropdownOpen ? "▲" : "▼"}
-                </span>
-              )}
-            </div>
+              About Us
+            </Link>
             <ul className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
               <li>
                 <Link 
                   to="/about#history" 
                   onClick={() => {
                     closeAllMenus();
-                    if (isMobileView) {
-                      scrollToSection('history');
-                    }
+                    scrollToSection('history');
                   }}
                   className={location.hash === "#history" ? "active" : ""}
                 >
@@ -192,9 +146,7 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
                   to="/about#goals" 
                   onClick={() => {
                     closeAllMenus();
-                    if (isMobileView) {
-                      scrollToSection('goals');
-                    }
+                    scrollToSection('goals');
                   }}
                   className={location.hash === "#goals" ? "active" : ""}
                 >
@@ -206,9 +158,7 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
                   to="/about#roles" 
                   onClick={() => {
                     closeAllMenus();
-                    if (isMobileView) {
-                      scrollToSection('roles');
-                    }
+                    scrollToSection('roles');
                   }}
                   className={location.hash === "#roles" ? "active" : ""}
                 >
@@ -220,9 +170,7 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
                   to="/about#status" 
                   onClick={() => {
                     closeAllMenus();
-                    if (isMobileView) {
-                      scrollToSection('status');
-                    }
+                    scrollToSection('status');
                   }}
                   className={location.hash === "#status" ? "active" : ""}
                 >
@@ -292,4 +240,4 @@ function Navbar({ activeSection, isHomePage, setIsHomePage }) {
   );
 }
 
-export default Navbar;
+export default Navbar;"
