@@ -55,7 +55,7 @@ function Footer() {
             rel="noreferrer"
             className="footer-codebiruh"
           >
-            H/MESKEL
+            CODEBIRUH
           </a>
         </p>
       </div>
