@@ -267,7 +267,7 @@ nav ul li a,
   }
   
   .logo {
-    max-width: 75%;
+    max-width: 60%;
   }
   
   .logo-text {
@@ -280,7 +280,7 @@ nav ul li a,
 
 @media (max-width: 480px) {
   .logo {
-    max-width: 65%;
+    max-width: 50%;
   }
   
   .logo-text {
