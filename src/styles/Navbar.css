@@ -6,8 +6,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   height: 60px;
   box-sizing: border-box;
@@ -29,6 +31,7 @@ header.scrolled {
   margin-left: 15px;
   order: 1;
   max-width: 70%;
+  min-width: 0; /* Allows text truncation */
 }
 
 .logo img {
@@ -36,13 +39,14 @@ header.scrolled {
   width: auto;
   margin-right: 10px;
   transition: height 0.3s ease;
+  flex-shrink: 0;
 }
 
 header.scrolled .logo img {
   height: 36px;
 }
 
-.logo span {
+.logo-text {
   font-size: 18px;
   font-weight: bold;
   white-space: nowrap;
@@ -51,7 +55,7 @@ header.scrolled .logo img {
   text-overflow: ellipsis;
 }
 
-header.scrolled .logo span {
+header.scrolled .logo-text {
   font-size: 16px;
 }
 
@@ -66,6 +70,7 @@ header.scrolled .logo span {
   padding: 5px 10px;
   z-index: 1001;
   order: 3;
+  flex-shrink: 0;
 }
 
 .mobile-menu-overlay {
@@ -263,18 +268,25 @@ nav ul li a,
     padding-left: 16px;
   }
   
-  .logo span {
+  .logo {
+    max-width: 75%;
+  }
+  
+  .logo-text {
     font-size: 16px;
-    max-width: 200px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
 
 @media (max-width: 480px) {
-  .logo span {
+  .logo {
+    max-width: 65%;
+  }
+  
+  .logo-text {
     font-size: 14px;
-    max-width: 150px;
   }
   
   .logo img {
@@ -293,6 +305,11 @@ nav ul li a,
     font-size: 24px;
     padding: 5px;
   }
+}
+
+/* Add padding to body to prevent content from being hidden behind fixed header */
+body {
+  padding-top: 60px;
 }
 
 /* Prevent horizontal scrolling on mobile */
