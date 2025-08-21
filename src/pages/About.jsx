@@ -21,10 +21,10 @@ const About = () => {
   });
 
   const targetCounts = {
-    totalChildren: 131,
-    currentChildren: 45,
-    staff: 30,
-    adopted: 70
+    totalChildren: 62,
+    currentChildren: 50,
+    staff: 18,
+    adopted: 82
   };
 
   const duration = 2000;
