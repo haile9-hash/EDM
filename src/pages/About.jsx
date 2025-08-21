@@ -276,7 +276,7 @@ const About = () => {
           <div className="status-grid">
             <div className="status-item">
               <h3>{counts.totalChildren}</h3>
-              <p>Total Children Helped</p>
+              <p>Outside the village helped</p>
             </div>
             <div className="status-item">
               <h3>{counts.currentChildren}</h3>
@@ -284,7 +284,7 @@ const About = () => {
             </div>
             <div className="status-item">
               <h3>{counts.staff}</h3>
-              <p>Dedicated Staff</p>
+              <p>Reunited Children</p>
             </div>
             <div className="status-item">
               <h3>{counts.adopted}</h3>
