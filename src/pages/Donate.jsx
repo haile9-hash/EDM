@@ -49,10 +49,10 @@ const Donate = () => {
   };
 
   const impactStats = [
-    { icon: FaUsers, number: "45", label: "Children Currently Cared For", color: "#667eea" },
-    { icon: FaBaby, number: "131", label: "Total Children Helped", color: "#38a169" },
-    { icon: FaHome, number: "70", label: "Successful Adoptions", color: "#ed8936" },
-    { icon: FaGraduationCap, number: "15", label: "Family Reunions", color: "#805ad5" }
+    { icon: FaUsers, number: "50", label: "Children Currently Cared For", color: "#667eea" },
+    { icon: FaBaby, number: "18", label: "children reunited with family", color: "#38a169" },
+    { icon: FaHome, number: "82", label: "children placed in legal domestic adoption", color: "#ed8936" },
+    { icon: FaGraduationCap, number: "62", label: "children supported outside the village", color: "#805ad5" }
   ];
 
   const testimonials = [
