@@ -35,12 +35,10 @@ In March 2021, construction began on a new two-story building. The dream of buil
         title: "Where We Are Today",
         content: `Now, Enat Debremarkos Children Village has:
 
-- 45 children, aged 1 month to 8 years, currently under full-time care
-- 131 children cared for since the beginning
-- 70 children placed in legal domestic adoption
-- 15 children reunited with family
-
-Support also extended to many poor and vulnerable children living with relatives or single mothers outside the village.
+- 50 children, aged 1 month to 8 years, currently under full-time care
+- 82 children placed in legal domestic adoption
+- 18 children reunited with family
+- 62 children supported while living with relatives or single mothers outside the village
 
 Children stay until they’re strong and independent. Even after leaving, they continue to see the village as their family and often return to support others.`,
       },
