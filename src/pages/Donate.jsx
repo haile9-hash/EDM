@@ -155,7 +155,7 @@ const Donate = () => {
           <div className="hero-cta">
             <div className="urgency-indicator">
               <span className="urgency-dot"></span>
-              <span>45 children need your support right now</span>
+              <span>50 children need your support right now</span>
             </div>
           </div>
         </div>
