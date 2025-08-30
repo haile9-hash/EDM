@@ -27,7 +27,7 @@ const slides = [
   {
     title: "Volunteer Opportunities",
     description:
-      "Join our team of dedicated volunteers making a difference in children's lives every day.<br/>ልጅ ከማኅፀን ብቻ ሳይሆን ከልብም ይወለዳል!!",
+      "Many children arrive with severe infections and malnutrition. We have lost 5 little lives already. This is why your support as a volunteer is critical.<br/>ልጅ ከማኅፀን ብቻ ሳይሆን ከልብም ይወለዳል!!",
     buttonText: "Get Involved",
     imageUrl: require("../assets/images/pic6.jpg"),
   },
