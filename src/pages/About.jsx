@@ -23,7 +23,7 @@ const About = () => {
   const targetCounts = {
     totalChildren: 215,
     currentChildren: 50,
-    staff: 18,
+    staff: 5,
     adopted: 101
   };
 
@@ -284,7 +284,7 @@ const About = () => {
             </div>
             <div className="status-item">
               <h3>{counts.staff}</h3>
-              <p>Reunited Children</p>
+              <p>Died Children</p>
             </div>
             <div className="status-item">
               <h3>{counts.adopted}</h3>
