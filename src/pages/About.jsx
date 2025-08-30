@@ -21,7 +21,7 @@ const About = () => {
   });
 
   const targetCounts = {
-    totalChildren: 62,
+    totalChildren: 215,
     currentChildren: 50,
     staff: 18,
     adopted: 101
@@ -276,7 +276,7 @@ const About = () => {
           <div className="status-grid">
             <div className="status-item">
               <h3>{counts.totalChildren}</h3>
-              <p>Outside the village helped</p>
+              <p>Totally we have recieved</p>
             </div>
             <div className="status-item">
               <h3>{counts.currentChildren}</h3>
