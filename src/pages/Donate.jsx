@@ -51,7 +51,7 @@ const Donate = () => {
   const impactStats = [
     { icon: FaUsers, number: "50", label: "Children Currently Cared For", color: "#667eea" },
     { icon: FaBaby, number: "18", label: "children reunited with family", color: "#38a169" },
-    { icon: FaHome, number: "82", label: "children placed in legal domestic adoption", color: "#ed8936" },
+    { icon: FaHome, number: "101", label: "children placed in legal domestic adoption", color: "#ed8936" },
     { icon: FaGraduationCap, number: "62", label: "children supported outside the village", color: "#805ad5" }
   ];
 
