@@ -45,7 +45,7 @@ Immediate Challenge
 One of the greatest challenges we face is that abandoned children often arrive with urgent health problems due to lack of protection, care, and nutrition. Many quickly develop respiratory infections, fever, and various skin conditions. Unfortunately, as a result of these health challenges, we have lost 5 children.  
 
 Since our founding, we have welcomed 215 children. While we could not raise all of them within the village, 101 have been placed into legal domestic adoption, and sadly 5 passed away shortly after arrival due to severe infections.  
-`,`,
+`,
       },
     ];
 
