@@ -24,7 +24,7 @@ const About = () => {
     totalChildren: 62,
     currentChildren: 50,
     staff: 18,
-    adopted: 82
+    adopted: 101
   };
 
   const duration = 2000;
