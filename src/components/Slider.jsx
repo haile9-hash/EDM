@@ -6,7 +6,7 @@ const slides = [
   {
     title: "Providing Loving Homes",
     description:
-      "Many of the abandoned children arriving at Enat Debremarkos face immediate health problems—including respiratory infections, fever, and malnutrition. Sadly, we have lost 5 children due to these challenges. This is why urgent support is critical..<br/>ልጅ ከማኅፀን ብቻ ሳይሆን ከልብም ይወለዳል!!",
+      "Many of the abandoned children arriving at Enat Debremarkos face immediate health problems including respiratory infections, fever, and malnutrition. Sadly, we have lost 5 children due to these challenges. This is why urgent support is critical..<br/>ልጅ ከማኅፀን ብቻ ሳይሆን ከልብም ይወለዳል!!",
     buttonText: "Support Us",
     imageUrl: require("../assets/images/pic1.jpg"),
   },
