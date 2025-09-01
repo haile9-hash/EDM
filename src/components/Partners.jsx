@@ -8,9 +8,6 @@ import orangeLogo from "../assets/images/par3.jpg";
 import futureLogo from "../assets/images/par4.jpg";
 import hopeLogo from "../assets/images/par5.jpg";
 import sunriseLogo from "../assets/images/par6.jpg";
-import blueSkyLogo from "../assets/images/pic22.jpg";
-import goldenLogo from "../assets/images/par7.jpg";
-
 const Partners = () => {
   const partners = [
     { id: 1, name: "Hans werner foundation", logo: eduLogo },
@@ -19,8 +16,7 @@ const Partners = () => {
     { id: 4, name: "Debre Markos Refferal Hospital", logo: futureLogo },
     { id: 5, name: "Debremarkos City Administration", logo: hopeLogo },
     { id: 6, name: "Chicago Families:From Chicago America ", logo: sunriseLogo },
-    { id: 7, name: "Canada Families:From Canada Kalghari", logo: blueSkyLogo },
-    { id: 8, name: "Mr Wubshet,Mrs Batable and their families:From Australia", logo: goldenLogo },
+    
   ];
 
   // Duplicate partners for seamless looping
