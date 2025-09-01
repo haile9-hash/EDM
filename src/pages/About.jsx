@@ -8,8 +8,9 @@ import ro3 from "../assets/images/ro3.jpg";
 import ro4 from "../assets/images/ro4.jpg";
 import ro5 from "../assets/images/ro5.jpg";
 import ro6 from "../assets/images/ro6.jpg";
-import ro7 from"../assets/images/ro7.jpg";
-import ro8 from"../assets/images/ro8.jpg";
+import ro7 from "../assets/images/ro7.jpg";
+import ro8 from "../assets/images/ro8.jpg";
+import ev9 from "../assets/images/Ev9.jpg"; // ✅ New image import
 import "../styles/About.css";
 
 const About = () => {
@@ -89,6 +90,33 @@ const About = () => {
         </div>
       </section>
 
+      {/* Immediate Challenge Section */}
+      <section id="challenge" className="content-section">
+        <div className="container">
+          <h2 className="section-title">Immediate Challenge</h2>
+          <div className="history-content">
+            <div className="history-text">
+              <p>
+                One of the greatest challenges we face is that abandoned children often arrive at our village in very fragile health. Without protection, proper nutrition, or medical care, many of them are extremely vulnerable. Some come to us suffering from malnutrition, while others are already battling severe infections. Within days of arrival, many quickly develop respiratory problems, high fever, and painful skin conditions.  
+              </p>
+              <p>
+               These early health struggles are heartbreaking, and despite our best efforts and urgent medical interventions, we have sadly lost 5 precious children to illnesses that were simply too advanced to treat in time.
+              </p>
+              <p>
+                Since our founding, we have welcomed 215 children into our care. While we could not raise all of them within the village, we celebrate that 101 have found loving families through legal domestic adoption. At the same time, we continue to grieve the 5 children we lost, whose memories remind us of the urgent importance of immediate health support for every abandoned child who arrives at our doors.
+              </p>
+            </div>
+            <div className="history-image">
+              <img
+                src={ev9}
+                alt="Immediate Challenge"
+                className="history-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="goals" className="content-section">
         <div className="container">
           <h2 className="section-title">Our Goals & Values</h2>
@@ -150,6 +178,7 @@ const About = () => {
         </div>
       </section>
 
+      {/* Roles & Responsibilities (unchanged) */}
       <section id="roles" className="content-section">
         <div className="container">
           <h2 className="section-title">Roles & Responsibilities</h2>
@@ -265,11 +294,11 @@ const About = () => {
               <h3>w/ro Fentanesh Afework </h3>
               <p>Head of Women and Children Afairs Office in Debremarkos city and board member of Enat Debremarkos Children Village.</p>
             </div>
-            
           </div>
         </div>
       </section>
 
+      {/* Current Status */}
       <section id="status" className="content-section">
         <div className="container">
           <h2 className="section-title">Current Status</h2>
