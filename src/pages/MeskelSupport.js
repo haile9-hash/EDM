@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 
 import {
@@ -32,30 +33,26 @@ import {
 import "../styles/MeskelSupport.css";
 
 /* =========================================================
-   SOURCE IMAGE
-   This image is inside src/assets/images
+   LOCAL IMAGES
+   ALL THESE FILES ARE INSIDE:
+
+   src/assets/images/
+
+   Files:
+   - children-village.jpg
+   - enat-logo.png
+   - cbe_qr.png
+   - telebirr_qr.png
 ========================================================= */
 
 import childrenVillageImage from "../assets/images/children-village.jpg";
-
-/* =========================================================
-   PUBLIC IMAGES
-   IMPORTANT:
-   Files inside /public are referenced from the website root.
-   
-   Correct:
-   /images/enat-logo.png
-
-   NOT:
-   public/images/enat-logo.png
-========================================================= */
-
-const enatLogo = "/images/enat-logo.png";
-const cbeQr = "/images/cbe_qr.png";
-const telebirrQr = "/images/telebirr_qr.png";
+import enatLogo from "../assets/images/enat-logo.png";
+import cbeQr from "../assets/images/cbe_qr.png";
+import telebirrQr from "../assets/images/telebirr_qr.png";
 
 /* =========================================================
    PUBLIC VIDEO
+
    File:
    public/video/meskel.mp4
 
@@ -226,9 +223,11 @@ function MeskelSupport({ setIsHomePage }) {
   useEffect(() => {
 
     return () => {
+
       document.body.classList.remove(
         "meskel-modal-open"
       );
+
     };
 
   }, []);
@@ -273,7 +272,9 @@ function MeskelSupport({ setIsHomePage }) {
       setCopiedValue(value);
 
       setTimeout(() => {
+
         setCopiedValue("");
+
       }, 1800);
 
     } catch (error) {
@@ -362,10 +363,12 @@ function MeskelSupport({ setIsHomePage }) {
               src={enatLogo}
               alt="Enat Debremarkos Children's Village"
               onError={(event) => {
+
                 console.error(
                   "Enat logo failed to load:",
                   event.currentTarget.src
                 );
+
               }}
             />
 
@@ -1565,10 +1568,12 @@ function MeskelSupport({ setIsHomePage }) {
                         className="meskel-qr-image"
                         loading="lazy"
                         onError={(event) => {
+
                           console.error(
                             "CBE QR failed to load:",
                             event.currentTarget.src
                           );
+
                         }}
                       />
 
@@ -1599,10 +1604,12 @@ function MeskelSupport({ setIsHomePage }) {
                         className="meskel-qr-image"
                         loading="lazy"
                         onError={(event) => {
+
                           console.error(
                             "Telebirr QR failed to load:",
                             event.currentTarget.src
                           );
+
                         }}
                       />
 
