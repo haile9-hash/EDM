@@ -43,9 +43,9 @@ import childrenVillageImage from "../assets/images/children-village.jpg";
    These files are inside public/images
 ========================================================= */
 
-const enatLogo = "/images/enat-logo.png";
-const cbeQr = "/images/cbe_qr.png";
-const telebirrQr = "/images/telebirr_qr.png";
+const enatLogo = "public/images/enat-logo.png";
+const cbeQr = "public/images/cbe_qr.png";
+const telebirrQr = "public/images/telebirr_qr.png";
 
 
 function MeskelSupport({ setIsHomePage }) {
