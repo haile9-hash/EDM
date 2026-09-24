@@ -40,12 +40,30 @@ import childrenVillageImage from "../assets/images/children-village.jpg";
 
 /* =========================================================
    PUBLIC IMAGES
-   These files are inside public/images
+   IMPORTANT:
+   Files inside /public are referenced from the website root.
+   
+   Correct:
+   /images/enat-logo.png
+
+   NOT:
+   public/images/enat-logo.png
 ========================================================= */
 
-const enatLogo = "public/images/enat-logo.png";
-const cbeQr = "public/images/cbe_qr.png";
-const telebirrQr = "public/images/telebirr_qr.png";
+const enatLogo = "/images/enat-logo.png";
+const cbeQr = "/images/cbe_qr.png";
+const telebirrQr = "/images/telebirr_qr.png";
+
+/* =========================================================
+   PUBLIC VIDEO
+   File:
+   public/video/meskel.mp4
+
+   Browser URL:
+   /video/meskel.mp4
+========================================================= */
+
+const meskelVideo = "/video/meskel.mp4";
 
 
 function MeskelSupport({ setIsHomePage }) {
@@ -54,9 +72,9 @@ function MeskelSupport({ setIsHomePage }) {
      LANGUAGE
   ========================================================= */
 
-  const [language, setLanguage] = useState(
-    localStorage.getItem("meskelLanguage") || "am"
-  );
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem("meskelLanguage") || "am";
+  });
 
 
   /* =========================================================
@@ -101,11 +119,7 @@ function MeskelSupport({ setIsHomePage }) {
   ========================================================= */
 
   const t = (am, en) => {
-
-    return language === "am"
-      ? am
-      : en;
-
+    return language === "am" ? am : en;
   };
 
 
@@ -206,6 +220,21 @@ function MeskelSupport({ setIsHomePage }) {
 
 
   /* =========================================================
+     CLEAN MODAL BODY CLASS ON UNMOUNT
+  ========================================================= */
+
+  useEffect(() => {
+
+    return () => {
+      document.body.classList.remove(
+        "meskel-modal-open"
+      );
+    };
+
+  }, []);
+
+
+  /* =========================================================
      COPY TO CLIPBOARD
   ========================================================= */
 
@@ -213,14 +242,38 @@ function MeskelSupport({ setIsHomePage }) {
 
     try {
 
-      await navigator.clipboard.writeText(value);
+      if (
+        navigator.clipboard &&
+        window.isSecureContext
+      ) {
+
+        await navigator.clipboard.writeText(value);
+
+      } else {
+
+        const textArea =
+          document.createElement("textarea");
+
+        textArea.value = value;
+
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+
+        document.body.appendChild(textArea);
+
+        textArea.focus();
+        textArea.select();
+
+        document.execCommand("copy");
+
+        document.body.removeChild(textArea);
+
+      }
 
       setCopiedValue(value);
 
       setTimeout(() => {
-
         setCopiedValue("");
-
       }, 1800);
 
     } catch (error) {
@@ -245,7 +298,7 @@ function MeskelSupport({ setIsHomePage }) {
 
       if (
         event.key === "Escape" &&
-        selectedAmount
+        selectedAmount !== null
       ) {
 
         closePaymentModal();
@@ -254,12 +307,10 @@ function MeskelSupport({ setIsHomePage }) {
 
     };
 
-
     document.addEventListener(
       "keydown",
       handleKeyDown
     );
-
 
     return () => {
 
@@ -310,6 +361,12 @@ function MeskelSupport({ setIsHomePage }) {
             <img
               src={enatLogo}
               alt="Enat Debremarkos Children's Village"
+              onError={(event) => {
+                console.error(
+                  "Enat logo failed to load:",
+                  event.currentTarget.src
+                );
+              }}
             />
 
             <div className="meskel-logo-text">
@@ -404,7 +461,7 @@ function MeskelSupport({ setIsHomePage }) {
           >
 
             <source
-              src="/video/meskel.mp4"
+              src={meskelVideo}
               type="video/mp4"
             />
 
@@ -1202,11 +1259,14 @@ function MeskelSupport({ setIsHomePage }) {
           PAYMENT MODAL
       ===================================================== */}
 
-      {selectedAmount && (
+      {selectedAmount !== null && (
 
         <div
           className="meskel-modal"
           onClick={closePaymentModal}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="payment-modal-title"
         >
 
           <div
@@ -1254,7 +1314,7 @@ function MeskelSupport({ setIsHomePage }) {
               </span>
 
 
-              <h2>
+              <h2 id="payment-modal-title">
 
                 {selectedAmount.toLocaleString()} ETB
 
@@ -1503,6 +1563,13 @@ function MeskelSupport({ setIsHomePage }) {
                         src={cbeQr}
                         alt="CBE Bank payment QR Code"
                         className="meskel-qr-image"
+                        loading="lazy"
+                        onError={(event) => {
+                          console.error(
+                            "CBE QR failed to load:",
+                            event.currentTarget.src
+                          );
+                        }}
                       />
 
                     </div>
@@ -1530,6 +1597,13 @@ function MeskelSupport({ setIsHomePage }) {
                         src={telebirrQr}
                         alt="Telebirr payment QR Code"
                         className="meskel-qr-image"
+                        loading="lazy"
+                        onError={(event) => {
+                          console.error(
+                            "Telebirr QR failed to load:",
+                            event.currentTarget.src
+                          );
+                        }}
                       />
 
                     </div>
