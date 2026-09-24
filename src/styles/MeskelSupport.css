@@ -1,0 +1,2168 @@
+
+/* =========================================================
+   ENATE / MESKEL SUPPORT
+   Modern / Responsive / Mobile First
+   Brand Colors:
+   #2c3e50 = Primary Dark Blue-Gray
+   #f39c12 = Brand Orange
+   #ffffff = White
+   #000000 = Black
+========================================================= */
+
+.meskel-page {
+  /* =======================================================
+     BRAND COLORS
+  ======================================================= */
+
+  --meskel-primary: #2c3e50;
+  --meskel-primary-dark: #1f2d3a;
+  --meskel-primary-light: #34495e;
+
+  --meskel-orange: #f39c12;
+  --meskel-orange-dark: #d68910;
+  --meskel-orange-light: #fff3dc;
+
+  --meskel-green: #12835b;
+
+  --meskel-black: #000000;
+  --meskel-dark: #1c2833;
+  --meskel-text: #344054;
+  --meskel-muted: #667085;
+
+  --meskel-white: #ffffff;
+  --meskel-light: #f7f8fa;
+  --meskel-light-dark: #eef1f4;
+
+  --meskel-border: #e4e7ec;
+
+  --meskel-radius: 20px;
+
+  --meskel-shadow:
+    0 20px 50px rgba(44, 62, 80, 0.08);
+
+  --meskel-shadow-large:
+    0 30px 80px rgba(44, 62, 80, 0.18);
+
+  font-family:
+    "Noto Sans Ethiopic",
+    Arial,
+    sans-serif;
+
+  color: var(--meskel-text);
+
+  background: var(--meskel-white);
+
+  line-height: 1.7;
+
+  overflow-x: hidden;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+.meskel-page *,
+.meskel-page *::before,
+.meskel-page *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.meskel-page button,
+.meskel-page input,
+.meskel-page textarea,
+.meskel-page select {
+  font: inherit;
+}
+
+.meskel-page button {
+  cursor: pointer;
+}
+
+.meskel-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.meskel-page img,
+.meskel-page video {
+  max-width: 100%;
+  display: block;
+}
+
+.meskel-page h1,
+.meskel-page h2,
+.meskel-page h3,
+.meskel-page p {
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.meskel-container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.meskel-section {
+  padding: 80px 0;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.meskel-navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+
+  z-index: 10000;
+
+  background:
+    rgba(255, 255, 255, 0.97);
+
+  border-bottom:
+    1px solid var(--meskel-border);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 4px 20px rgba(44, 62, 80, 0.07);
+}
+
+.meskel-nav-content {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.meskel-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.meskel-logo img {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.meskel-logo-text {
+  min-width: 0;
+}
+
+.meskel-logo-text strong {
+  display: block;
+
+  color: var(--meskel-primary);
+
+  font-size: 13px;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+.meskel-logo-text span {
+  display: block;
+
+  color: var(--meskel-muted);
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.meskel-nav-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   LANGUAGE BUTTON
+========================================================= */
+
+.meskel-language-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  min-height: 40px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid var(--meskel-border);
+
+  border-radius: 10px;
+
+  background:
+    var(--meskel-white);
+
+  color:
+    var(--meskel-primary);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition:
+    0.25s ease;
+}
+
+.meskel-language-btn:hover {
+  border-color:
+    var(--meskel-orange);
+
+  color:
+    var(--meskel-orange);
+}
+
+
+/* =========================================================
+   NAV SUPPORT BUTTON
+========================================================= */
+
+.meskel-nav-support-btn {
+  display: none;
+
+  min-height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 15px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background:
+    var(--meskel-orange);
+
+  color:
+    var(--meskel-black);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition:
+    0.25s ease;
+}
+
+.meskel-nav-support-btn:hover {
+  background:
+    var(--meskel-orange-dark);
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.meskel-hero {
+  position: relative;
+
+  min-height:
+    100svh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    var(--meskel-primary);
+
+  scroll-margin-top: 72px;
+}
+
+.meskel-hero-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+.meskel-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 30, 39, 0.96) 0%,
+      rgba(44, 62, 80, 0.86) 48%,
+      rgba(44, 62, 80, 0.48) 100%
+    );
+}
+
+
+/* =========================================================
+   HERO GLOW
+========================================================= */
+
+.meskel-hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  filter: blur(10px);
+}
+
+.meskel-glow-one {
+  width: 300px;
+  height: 300px;
+
+  right: -150px;
+  top: -100px;
+
+  background:
+    rgba(243, 156, 18, 0.22);
+}
+
+.meskel-glow-two {
+  width: 250px;
+  height: 250px;
+
+  left: -150px;
+  bottom: -130px;
+
+  background:
+    rgba(44, 62, 80, 0.35);
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.meskel-hero-container {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  padding: 90px 0 80px;
+}
+
+.meskel-hero-content {
+  width: 100%;
+
+  max-width: 780px;
+
+  color:
+    var(--meskel-white);
+}
+
+
+/* =========================================================
+   HERO BADGE
+========================================================= */
+
+.meskel-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 7px 13px;
+
+  margin-bottom: 20px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  backdrop-filter:
+    blur(8px);
+
+  color:
+    var(--meskel-white);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.meskel-cross-symbol {
+  width: 23px;
+  height: 23px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--meskel-orange);
+
+  color:
+    var(--meskel-black);
+
+  font-size: 16px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.meskel-hero h1 {
+  font-size:
+    clamp(36px, 9vw, 72px);
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+
+  font-weight: 900;
+
+  margin: 0 0 22px;
+}
+
+.meskel-title-line {
+  display: block;
+
+  color:
+    var(--meskel-orange);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.meskel-hero-description {
+  max-width: 720px;
+
+  margin: 0 0 30px;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size:
+    clamp(15px, 3vw, 20px);
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.meskel-hero-buttons {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  width: 100%;
+}
+
+.meskel-primary-btn,
+.meskel-secondary-btn {
+  min-height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 22px;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+
+  transition:
+    0.25s ease;
+
+  width: 100%;
+}
+
+
+/* Primary */
+
+.meskel-primary-btn {
+  background:
+    var(--meskel-orange);
+
+  color:
+    var(--meskel-black);
+
+  border:
+    1px solid var(--meskel-orange);
+}
+
+.meskel-primary-btn:hover {
+  background:
+    var(--meskel-orange-dark);
+
+  border-color:
+    var(--meskel-orange-dark);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 15px 30px
+    rgba(0, 0, 0, 0.20);
+}
+
+
+/* Secondary */
+
+.meskel-secondary-btn {
+  border:
+    1px solid rgba(255, 255, 255, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  color:
+    var(--meskel-white);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.meskel-secondary-btn:hover {
+  background:
+    var(--meskel-white);
+
+  color:
+    var(--meskel-primary);
+
+  border-color:
+    var(--meskel-white);
+}
+
+
+/* Icons */
+
+.meskel-primary-btn svg {
+  color:
+    var(--meskel-black);
+}
+
+.meskel-secondary-btn svg {
+  color:
+    currentColor;
+}
+
+
+/* =========================================================
+   HERO TRUST
+========================================================= */
+
+.meskel-hero-trust {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+.meskel-hero-trust div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  font-size: 12px;
+}
+
+.meskel-hero-trust svg {
+  color:
+    var(--meskel-orange);
+}
+
+
+/* =========================================================
+   SCROLL DOWN
+========================================================= */
+
+.meskel-scroll-down {
+  position: absolute;
+
+  z-index: 5;
+
+  bottom: 18px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.30);
+
+  border-radius: 50%;
+
+  color:
+    var(--meskel-white);
+
+  animation:
+    meskelBounce 2s infinite;
+}
+
+@keyframes meskelBounce {
+  0%,
+  100% {
+    transform:
+      translate(-50%, 0);
+  }
+
+  50% {
+    transform:
+      translate(-50%, 7px);
+  }
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.meskel-section-heading {
+  max-width: 760px;
+
+  margin:
+    0 auto 45px;
+
+  text-align: center;
+}
+
+.meskel-section-label {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color:
+    var(--meskel-orange);
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.4px;
+}
+
+.meskel-section-heading h2 {
+  color:
+    var(--meskel-primary);
+
+  font-size:
+    clamp(27px, 6vw, 43px);
+
+  line-height: 1.25;
+
+  margin:
+    0 0 12px;
+}
+
+.meskel-section-heading p {
+  color:
+    var(--meskel-muted);
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.meskel-about {
+  background:
+    var(--meskel-white);
+
+  scroll-margin-top: 72px;
+}
+
+.meskel-about-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 40px;
+
+  align-items: center;
+}
+
+.meskel-about-image-wrapper {
+  position: relative;
+
+  padding: 8px;
+}
+
+.meskel-image-decoration {
+  position: absolute;
+
+  inset:
+    0 25px 25px 0;
+
+  border:
+    2px solid var(--meskel-orange);
+
+  border-radius: 20px;
+
+  z-index: 0;
+}
+
+.meskel-about-image {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  min-height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  box-shadow:
+    var(--meskel-shadow);
+}
+
+.meskel-content-icon {
+  width: 50px;
+  height: 50px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 14px;
+
+  background:
+    var(--meskel-orange-light);
+
+  color:
+    var(--meskel-orange-dark);
+}
+
+.meskel-about-content h3 {
+  color:
+    var(--meskel-primary);
+
+  font-size:
+    clamp(22px, 5vw, 30px);
+
+  line-height: 1.4;
+
+  margin:
+    0 0 16px;
+}
+
+.meskel-about-content p {
+  color:
+    var(--meskel-muted);
+
+  margin:
+    0 0 15px;
+
+  font-size: 15px;
+}
+
+.meskel-about-points {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.meskel-about-points div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color:
+    var(--meskel-primary);
+
+  font-weight: 600;
+}
+
+.meskel-about-points svg {
+  color:
+    var(--meskel-green);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SUPPORT
+========================================================= */
+
+.meskel-support {
+  background:
+    var(--meskel-light);
+
+  scroll-margin-top: 72px;
+}
+
+.meskel-support-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 15px;
+}
+
+.meskel-support-card {
+  position: relative;
+
+  border:
+    1px solid var(--meskel-border);
+
+  border-radius: 18px;
+
+  padding: 28px 20px;
+
+  background:
+    var(--meskel-white);
+
+  text-align: center;
+
+  color:
+    var(--meskel-text);
+
+  transition:
+    0.25s ease;
+
+  box-shadow:
+    0 8px 25px
+    rgba(44, 62, 80, 0.05);
+}
+
+.meskel-support-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    var(--meskel-orange);
+
+  box-shadow:
+    var(--meskel-shadow);
+}
+
+.meskel-support-card.featured {
+  border:
+    2px solid var(--meskel-orange);
+
+  box-shadow:
+    0 15px 40px
+    rgba(243, 156, 18, 0.14);
+}
+
+.meskel-popular-badge {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  background:
+    var(--meskel-orange-light);
+
+  color:
+    var(--meskel-orange-dark);
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.meskel-support-card-icon {
+  width: 54px;
+  height: 54px;
+
+  display: grid;
+  place-items: center;
+
+  margin:
+    0 auto 15px;
+
+  border-radius: 16px;
+
+  background:
+    var(--meskel-orange-light);
+
+  color:
+    var(--meskel-orange-dark);
+}
+
+.meskel-support-card h3 {
+  margin: 0;
+
+  color:
+    var(--meskel-primary);
+
+  font-size: 30px;
+}
+
+.meskel-support-card h3 small {
+  font-size: 13px;
+
+  color:
+    var(--meskel-muted);
+}
+
+.meskel-support-card p {
+  margin:
+    7px 0 18px;
+
+  color:
+    var(--meskel-muted);
+
+  font-size: 14px;
+}
+
+.meskel-select-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color:
+    var(--meskel-orange-dark);
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.meskel-how {
+  background:
+    var(--meskel-white);
+}
+
+.meskel-steps {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 18px;
+}
+
+.meskel-step {
+  position: relative;
+
+  padding:
+    30px 24px;
+
+  border:
+    1px solid var(--meskel-border);
+
+  border-radius: 20px;
+
+  background:
+    var(--meskel-white);
+
+  box-shadow:
+    var(--meskel-shadow);
+}
+
+.meskel-step-number {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  color:
+    #dfe5ec;
+
+  font-size: 32px;
+
+  font-weight: 900;
+}
+
+.meskel-step > svg {
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 15px;
+
+  color:
+    var(--meskel-orange);
+}
+
+.meskel-step h3 {
+  margin:
+    0 0 8px;
+
+  color:
+    var(--meskel-primary);
+
+  font-size: 20px;
+}
+
+.meskel-step p {
+  margin: 0;
+
+  color:
+    var(--meskel-muted);
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.meskel-trust {
+  background:
+    var(--meskel-light);
+}
+
+.meskel-trust-box {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding:
+    35px 25px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--meskel-primary-dark),
+      var(--meskel-primary)
+    );
+
+  color:
+    var(--meskel-white);
+
+  text-align: center;
+
+  box-shadow:
+    var(--meskel-shadow-large);
+}
+
+.meskel-trust-icon {
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 20px;
+
+  background:
+    rgba(243, 156, 18, 0.16);
+
+  color:
+    var(--meskel-orange);
+}
+
+.meskel-trust-content .meskel-section-label {
+  color:
+    var(--meskel-orange);
+}
+
+.meskel-trust-content h2 {
+  margin:
+    5px 0 10px;
+
+  font-size:
+    clamp(25px, 5vw, 40px);
+
+  color:
+    var(--meskel-white);
+}
+
+.meskel-trust-content p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.meskel-footer {
+  padding:
+    55px 0 25px;
+
+  background:
+    var(--meskel-primary-dark);
+
+  color:
+    var(--meskel-white);
+}
+
+.meskel-footer-grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 35px;
+}
+
+.meskel-footer-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.meskel-footer-logo img {
+  width: 45px;
+  height: 45px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.meskel-footer-logo strong {
+  display: block;
+
+  color:
+    var(--meskel-white);
+
+  font-size: 14px;
+}
+
+.meskel-footer-logo span {
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.6);
+
+  font-size: 11px;
+}
+
+.meskel-footer-brand > p {
+  margin:
+    15px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 13px;
+}
+
+.meskel-footer-contact h3,
+.meskel-footer-partner h3 {
+  margin:
+    0 0 14px;
+
+  color:
+    var(--meskel-orange);
+
+  font-size: 16px;
+}
+
+.meskel-footer-contact a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 13px;
+}
+
+.meskel-footer-contact a:hover {
+  color:
+    var(--meskel-orange);
+}
+
+.meskel-footer-partner p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 12px;
+}
+
+.meskel-footer-partner strong {
+  display: inline-block;
+
+  margin-top: 4px;
+
+  color:
+    var(--meskel-orange);
+}
+
+.meskel-footer-bottom {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 35px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  text-align: center;
+}
+
+.meskel-footer-bottom p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PAYMENT MODAL
+========================================================= */
+
+body.meskel-modal-open {
+  overflow: hidden;
+}
+
+.meskel-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+
+  background:
+    rgba(28, 40, 51, 0.78);
+
+  backdrop-filter:
+    blur(8px);
+
+  overflow-y: auto;
+}
+
+.meskel-modal-box {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 620px;
+
+  max-height: 94vh;
+
+  overflow-y: auto;
+
+  padding: 25px;
+
+  border-radius: 24px;
+
+  background:
+    var(--meskel-white);
+
+  box-shadow:
+    var(--meskel-shadow-large);
+}
+
+.meskel-modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    #f2f4f7;
+
+  color:
+    var(--meskel-primary);
+}
+
+.meskel-modal-close:hover {
+  background:
+    var(--meskel-orange-light);
+
+  color:
+    var(--meskel-orange-dark);
+}
+
+.meskel-modal-header {
+  padding-right: 45px;
+
+  text-align: center;
+}
+
+.meskel-modal-icon {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  margin:
+    0 auto 12px;
+
+  border-radius: 18px;
+
+  background:
+    var(--meskel-orange-light);
+
+  color:
+    var(--meskel-orange-dark);
+}
+
+.meskel-modal-header h2 {
+  margin:
+    0 0 5px;
+
+  color:
+    var(--meskel-primary);
+
+  font-size: 32px;
+}
+
+.meskel-modal-header p {
+  margin:
+    0 0 20px;
+
+  color:
+    var(--meskel-muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PAYMENT METHODS
+========================================================= */
+
+.meskel-payment-methods {
+  display: grid;
+
+  gap: 13px;
+}
+
+.meskel-payment-card {
+  padding: 17px;
+
+  border:
+    1px solid var(--meskel-border);
+
+  border-radius: 15px;
+
+  background:
+    #fbfcfd;
+}
+
+.meskel-payment-card-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.meskel-payment-card-header > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    var(--meskel-primary);
+}
+
+.meskel-payment-card-header > svg {
+  color:
+    var(--meskel-green);
+}
+
+.meskel-detail-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 0;
+
+  border-top:
+    1px solid var(--meskel-border);
+
+  font-size: 12px;
+}
+
+.meskel-detail-row span {
+  color:
+    var(--meskel-muted);
+}
+
+.meskel-detail-row strong {
+  color:
+    var(--meskel-primary);
+
+  font-size: 12px;
+
+  text-align: right;
+
+  word-break: break-word;
+}
+
+.meskel-detail-row button {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid var(--meskel-border);
+
+  border-radius: 8px;
+
+  background:
+    var(--meskel-white);
+
+  color:
+    var(--meskel-orange-dark);
+
+  transition:
+    0.2s ease;
+}
+
+.meskel-detail-row button:hover {
+  border-color:
+    var(--meskel-orange);
+
+  background:
+    var(--meskel-orange-light);
+}
+
+
+/* =========================================================
+   QR PLACEHOLDER
+========================================================= */
+
+.meskel-qr-placeholder {
+  min-height: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border:
+    1px dashed var(--meskel-border);
+
+  border-radius: 12px;
+
+  background:
+    var(--meskel-white);
+
+  color:
+    var(--meskel-primary);
+
+  text-align: center;
+}
+
+.meskel-qr-placeholder p {
+  margin: 0;
+
+  color:
+    var(--meskel-muted);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PAYMENT NOTE
+========================================================= */
+
+.meskel-payment-note {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin:
+    15px 0;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background:
+    var(--meskel-orange-light);
+
+  color:
+    var(--meskel-muted);
+
+  font-size: 11px;
+}
+
+.meskel-payment-note svg {
+  flex-shrink: 0;
+
+  color:
+    var(--meskel-orange-dark);
+}
+
+
+/* =========================================================
+   MODAL DONE BUTTON
+========================================================= */
+
+.meskel-modal-done {
+  width: 100%;
+
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  background:
+    var(--meskel-orange);
+
+  color:
+    var(--meskel-black);
+
+  font-weight: 900;
+
+  transition:
+    0.25s ease;
+}
+
+.meskel-modal-done:hover {
+  background:
+    var(--meskel-orange-dark);
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 600px) {
+
+  .meskel-container {
+    width:
+      min(1180px, calc(100% - 48px));
+  }
+
+  .meskel-hero-buttons {
+    flex-direction: row;
+
+    width: auto;
+  }
+
+  .meskel-primary-btn,
+  .meskel-secondary-btn {
+    width: auto;
+
+    min-width: 170px;
+
+    padding:
+      0 24px;
+  }
+
+  .meskel-hero-trust {
+    flex-direction: row;
+
+    gap: 22px;
+  }
+
+  .meskel-support-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .meskel-steps {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .meskel-footer-grid {
+    grid-template-columns:
+      1.5fr 1fr 1fr;
+  }
+
+  .meskel-footer-bottom {
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 900px) {
+
+  .meskel-nav-support-btn {
+    display: flex;
+  }
+
+  .meskel-language-btn {
+    min-height: 40px;
+
+    padding:
+      0 13px;
+  }
+
+  .meskel-hero {
+    min-height:
+      calc(100svh - 72px);
+  }
+
+  .meskel-hero-container {
+    padding:
+      110px 0;
+  }
+
+  .meskel-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(20, 30, 39, 0.96) 0%,
+        rgba(44, 62, 80, 0.80) 50%,
+        rgba(44, 62, 80, 0.36) 100%
+      );
+  }
+
+  .meskel-about-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .meskel-support-grid {
+    grid-template-columns:
+      repeat(5, 1fr);
+  }
+
+  .meskel-trust-box {
+    flex-direction: row;
+
+    text-align: left;
+
+    padding: 45px;
+  }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  .meskel-hero {
+    min-height:
+      780px;
+  }
+
+  .meskel-hero h1 {
+    font-size:
+      72px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 599px) {
+
+  .meskel-container {
+    width:
+      calc(100% - 24px);
+  }
+
+  .meskel-section {
+    padding:
+      60px 0;
+  }
+
+  .meskel-nav-content {
+    min-height:
+      64px;
+  }
+
+  .meskel-navbar {
+    min-height:
+      64px;
+  }
+
+  .meskel-logo {
+    gap: 8px;
+  }
+
+  .meskel-logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .meskel-logo-text strong {
+    font-size: 11px;
+  }
+
+  .meskel-logo-text span {
+    font-size: 9px;
+  }
+
+  .meskel-language-btn {
+    min-height:
+      38px;
+
+    padding:
+      0 9px;
+  }
+
+  .meskel-language-btn span {
+    display: none;
+  }
+
+  .meskel-hero {
+    min-height:
+      calc(100svh - 64px);
+
+    scroll-margin-top:
+      64px;
+  }
+
+  .meskel-hero-container {
+    padding:
+      70px 0 80px;
+  }
+
+  .meskel-badge {
+    font-size:
+      11px;
+
+    padding:
+      6px 10px;
+  }
+
+  .meskel-cross-symbol {
+    width: 21px;
+    height: 21px;
+
+    font-size:
+      14px;
+  }
+
+  .meskel-hero h1 {
+    font-size:
+      clamp(32px, 11vw, 46px);
+
+    letter-spacing:
+      -0.5px;
+
+    line-height:
+      1.15;
+  }
+
+  .meskel-hero-description {
+    font-size:
+      14px;
+
+    line-height:
+      1.8;
+  }
+
+  .meskel-hero-buttons {
+    width: 100%;
+  }
+
+  .meskel-primary-btn,
+  .meskel-secondary-btn {
+    width: 100%;
+  }
+
+  .meskel-hero-trust {
+    margin-top:
+      22px;
+  }
+
+  .meskel-about-grid {
+    gap:
+      30px;
+  }
+
+  .meskel-about-image {
+    min-height:
+      250px;
+  }
+
+  .meskel-image-decoration {
+    inset:
+      0 18px 18px 0;
+  }
+
+  .meskel-support-card {
+    padding:
+      25px 18px;
+  }
+
+  .meskel-step {
+    padding:
+      26px 20px;
+  }
+
+  .meskel-trust-box {
+    padding:
+      30px 20px;
+  }
+
+  .meskel-modal {
+    padding:
+      7px;
+  }
+
+  .meskel-modal-box {
+    padding:
+      18px;
+
+    border-radius:
+      18px;
+
+    max-height:
+      96vh;
+  }
+
+  .meskel-modal-header h2 {
+    font-size:
+      27px;
+  }
+
+  .meskel-detail-row {
+    grid-template-columns:
+      1fr auto;
+  }
+
+  .meskel-detail-row > span {
+    grid-column:
+      1 / -1;
+  }
+
+  .meskel-detail-row strong {
+    text-align:
+      left;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .meskel-container {
+    width:
+      calc(100% - 20px);
+  }
+
+  .meskel-hero-container {
+    padding:
+      55px 0 70px;
+  }
+
+  .meskel-hero h1 {
+    font-size:
+      31px;
+  }
+
+  .meskel-hero-description {
+    font-size:
+      13px;
+  }
+
+  .meskel-primary-btn,
+  .meskel-secondary-btn {
+    min-height:
+      50px;
+
+    font-size:
+      13px;
+  }
+
+  .meskel-section-heading h2 {
+    font-size:
+      25px;
+  }
+
+  .meskel-section {
+    padding:
+      50px 0;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  .meskel-support-card:hover {
+    transform:
+      none;
+  }
+
+  .meskel-primary-btn:hover,
+  .meskel-secondary-btn:hover {
+    transform:
+      none;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+  .meskel-page *,
+  .meskel-page *::before,
+  .meskel-page *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+  .meskel-scroll-down {
+    animation:
+      none;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+========================================================= */
+
+.meskel-page
+button:focus-visible,
+.meskel-page
+a:focus-visible {
+  outline:
+    3px solid var(--meskel-orange);
+
+  outline-offset:
+    3px;
+}
+
+
+/* =========================================================
+   REMOVE NAVBAR / HERO GAP
+========================================================= */
+
+.meskel-navbar + main {
+  margin:
+    0;
+
+  padding:
+    0;
+}
+
+.meskel-navbar + main .meskel-hero {
+  margin-top:
+    0;
+}
+
+.meskel-hero-video,
+.meskel-hero img {
+  display:
+    block;
+}
+
+
+/* =========================================================
+   FINAL MOBILE SAFETY
+   Prevent horizontal overflow
+========================================================= */
+
+.meskel-page {
+  max-width:
+    100%;
+
+  overflow-x:
+    clip;
+}
+
+@supports not (overflow: clip) {
+  .meskel-page {
+    overflow-x:
+      hidden;
+  }
+}
