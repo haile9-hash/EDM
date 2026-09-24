@@ -1,7 +1,7 @@
-
 /* =========================================================
    ENATE / MESKEL SUPPORT
    Modern / Responsive / Mobile First
+
    Brand Colors:
    #2c3e50 = Primary Dark Blue-Gray
    #f39c12 = Brand Orange
@@ -9,11 +9,12 @@
    #000000 = Black
 ========================================================= */
 
-.meskel-page {
-  /* =======================================================
-     BRAND COLORS
-  ======================================================= */
 
+/* =========================================================
+   ROOT / BRAND VARIABLES
+========================================================= */
+
+.meskel-page {
   --meskel-primary: #2c3e50;
   --meskel-primary-dark: #1f2d3a;
   --meskel-primary-light: #34495e;
@@ -57,6 +58,8 @@
   overflow-x: hidden;
 
   min-width: 0;
+
+  max-width: 100%;
 }
 
 
@@ -173,6 +176,8 @@ body {
   gap: 10px;
 
   min-width: 0;
+
+  flex: 1;
 }
 
 .meskel-logo img {
@@ -199,6 +204,9 @@ body {
   font-weight: 900;
 
   white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .meskel-logo-text span {
@@ -216,6 +224,8 @@ body {
   align-items: center;
 
   gap: 7px;
+
+  flex-shrink: 0;
 }
 
 
@@ -233,6 +243,8 @@ body {
 
   min-height: 40px;
 
+  min-width: 68px;
+
   padding: 0 10px;
 
   border:
@@ -249,6 +261,10 @@ body {
   font-size: 12px;
   font-weight: 800;
 
+  white-space: nowrap;
+
+  flex-shrink: 0;
+
   transition:
     0.25s ease;
 }
@@ -259,6 +275,16 @@ body {
 
   color:
     var(--meskel-orange);
+}
+
+.meskel-language-code {
+  display: inline-block !important;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  white-space: nowrap;
 }
 
 
@@ -309,8 +335,10 @@ body {
 .meskel-hero {
   position: relative;
 
-  min-height:
-    100svh;
+  width: 100%;
+
+  min-height: 100svh;
+  min-height: 100vh;
 
   display: flex;
   align-items: center;
@@ -323,18 +351,35 @@ body {
   scroll-margin-top: 72px;
 }
 
+
+/* =========================================================
+   HERO VIDEO
+========================================================= */
+
 .meskel-hero-video {
   position: absolute;
 
-  inset: 0;
+  top: 0;
+  left: 0;
 
   width: 100%;
   height: 100%;
 
+  min-width: 100%;
+  min-height: 100%;
+
   object-fit: cover;
+  object-position: center center;
 
   z-index: 0;
+
+  display: block;
 }
+
+
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
 
 .meskel-hero-overlay {
   position: absolute;
@@ -403,7 +448,7 @@ body {
 
   width: 100%;
 
-  padding: 90px 0 80px;
+  padding: 110px 0 80px;
 }
 
 .meskel-hero-content {
@@ -553,7 +598,9 @@ body {
 }
 
 
-/* Primary */
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
 
 .meskel-primary-btn {
   background:
@@ -582,7 +629,9 @@ body {
 }
 
 
-/* Secondary */
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
 
 .meskel-secondary-btn {
   border:
@@ -610,7 +659,9 @@ body {
 }
 
 
-/* Icons */
+/* =========================================================
+   BUTTON ICONS
+========================================================= */
 
 .meskel-primary-btn svg {
   color:
@@ -1763,6 +1814,8 @@ body.meskel-modal-open {
   .meskel-language-btn {
     min-height: 40px;
 
+    min-width: auto;
+
     padding:
       0 13px;
   }
@@ -1770,6 +1823,9 @@ body.meskel-modal-open {
   .meskel-hero {
     min-height:
       calc(100svh - 72px);
+
+    min-height:
+      calc(100vh - 72px);
   }
 
   .meskel-hero-container {
@@ -1826,24 +1882,43 @@ body.meskel-modal-open {
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
+   IMPORTANT FIXES
 ========================================================= */
 
 @media (max-width: 599px) {
 
+  /* -----------------------------------------------
+     CONTAINER
+  ----------------------------------------------- */
+
   .meskel-container {
     width:
       calc(100% - 24px);
+
+    max-width: 100%;
   }
+
+
+  /* -----------------------------------------------
+     SECTIONS
+  ----------------------------------------------- */
 
   .meskel-section {
     padding:
       60px 0;
   }
 
+
+  /* -----------------------------------------------
+     MOBILE NAVBAR
+  ----------------------------------------------- */
+
   .meskel-nav-content {
     min-height:
       64px;
+
+    gap: 8px;
   }
 
   .meskel-navbar {
@@ -1853,6 +1928,10 @@ body.meskel-modal-open {
 
   .meskel-logo {
     gap: 8px;
+
+    min-width: 0;
+
+    flex: 1;
   }
 
   .meskel-logo img {
@@ -1860,40 +1939,164 @@ body.meskel-modal-open {
     height: 38px;
   }
 
+  .meskel-logo-text {
+    min-width: 0;
+
+    max-width: calc(100vw - 145px);
+  }
+
   .meskel-logo-text strong {
     font-size: 11px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
   }
 
   .meskel-logo-text span {
     font-size: 9px;
   }
 
+
+  /* -----------------------------------------------
+     LANGUAGE BUTTON
+     DO NOT HIDE AM / EN ON MOBILE
+  ----------------------------------------------- */
+
+  .meskel-nav-actions {
+    gap: 6px;
+
+    flex-shrink: 0;
+  }
+
   .meskel-language-btn {
+    display: inline-flex;
+
+    min-width: 68px;
+
     min-height:
       38px;
 
     padding:
-      0 9px;
+      0 8px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+
+    visibility: visible;
+
+    opacity: 1;
   }
 
-  .meskel-language-btn span {
-    display: none;
+  .meskel-language-btn span,
+  .meskel-language-code {
+    display: inline-block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
   }
+
+
+  /* -----------------------------------------------
+     HERO
+     FULL MOBILE SCREEN
+  ----------------------------------------------- */
 
   .meskel-hero {
-    min-height:
-      calc(100svh - 64px);
+    width: 100%;
+
+    min-height: 100svh;
+
+    min-height: 100dvh;
+
+    height: 100svh;
+
+    height: 100dvh;
 
     scroll-margin-top:
       64px;
   }
 
-  .meskel-hero-container {
-    padding:
-      70px 0 80px;
+
+  /* -----------------------------------------------
+     HERO VIDEO
+     FULL SCREEN COVER
+  ----------------------------------------------- */
+
+  .meskel-hero-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100%;
+
+    min-width: 100vw;
+    min-height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    display: block;
   }
 
+
+  /* -----------------------------------------------
+     MOBILE HERO OVERLAY
+  ----------------------------------------------- */
+
+  .meskel-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(20, 30, 39, 0.82) 0%,
+        rgba(44, 62, 80, 0.70) 42%,
+        rgba(20, 30, 39, 0.86) 100%
+      );
+  }
+
+
+  /* -----------------------------------------------
+     HERO CONTENT
+     EXTRA DISTANCE BELOW FIXED HEADER
+  ----------------------------------------------- */
+
+  .meskel-hero-container {
+    width: 100%;
+
+    padding:
+      118px 0 80px;
+
+    min-height: 100%;
+
+    display: flex;
+
+    align-items: center;
+  }
+
+  .meskel-hero-content {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+
+  /* -----------------------------------------------
+     MESKEL BADGE
+     NOW HAS CLEAR SPACE BELOW HEADER
+  ----------------------------------------------- */
+
   .meskel-badge {
+    margin-top: 8px;
+
+    margin-bottom: 18px;
+
     font-size:
       11px;
 
@@ -1909,6 +2112,11 @@ body.meskel-modal-open {
       14px;
   }
 
+
+  /* -----------------------------------------------
+     HERO TITLE
+  ----------------------------------------------- */
+
   .meskel-hero h1 {
     font-size:
       clamp(32px, 11vw, 46px);
@@ -1918,7 +2126,17 @@ body.meskel-modal-open {
 
     line-height:
       1.15;
+
+    margin-top: 0;
+
+    margin-bottom:
+      20px;
   }
+
+
+  /* -----------------------------------------------
+     HERO DESCRIPTION
+  ----------------------------------------------- */
 
   .meskel-hero-description {
     font-size:
@@ -1926,21 +2144,57 @@ body.meskel-modal-open {
 
     line-height:
       1.8;
+
+    margin-bottom:
+      26px;
   }
+
+
+  /* -----------------------------------------------
+     HERO BUTTONS
+  ----------------------------------------------- */
 
   .meskel-hero-buttons {
     width: 100%;
+
+    gap: 10px;
   }
 
   .meskel-primary-btn,
   .meskel-secondary-btn {
     width: 100%;
+
+    min-height:
+      52px;
   }
+
+
+  /* -----------------------------------------------
+     HERO TRUST
+  ----------------------------------------------- */
 
   .meskel-hero-trust {
     margin-top:
       22px;
   }
+
+
+  /* -----------------------------------------------
+     SCROLL BUTTON
+  ----------------------------------------------- */
+
+  .meskel-scroll-down {
+    bottom:
+      14px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+
+  /* -----------------------------------------------
+     ABOUT
+  ----------------------------------------------- */
 
   .meskel-about-grid {
     gap:
@@ -1948,8 +2202,12 @@ body.meskel-modal-open {
   }
 
   .meskel-about-image {
+    width: 100%;
+
     min-height:
       250px;
+
+    object-fit: cover;
   }
 
   .meskel-image-decoration {
@@ -1957,20 +2215,40 @@ body.meskel-modal-open {
       0 18px 18px 0;
   }
 
+
+  /* -----------------------------------------------
+     SUPPORT CARDS
+  ----------------------------------------------- */
+
   .meskel-support-card {
     padding:
       25px 18px;
   }
+
+
+  /* -----------------------------------------------
+     STEPS
+  ----------------------------------------------- */
 
   .meskel-step {
     padding:
       26px 20px;
   }
 
+
+  /* -----------------------------------------------
+     TRUST
+  ----------------------------------------------- */
+
   .meskel-trust-box {
     padding:
       30px 20px;
   }
+
+
+  /* -----------------------------------------------
+     MODAL
+  ----------------------------------------------- */
 
   .meskel-modal {
     padding:
@@ -2021,9 +2299,40 @@ body.meskel-modal-open {
       calc(100% - 20px);
   }
 
+
+  /* Keep language visible even on very small phones */
+
+  .meskel-language-btn {
+    min-width:
+      64px;
+
+    padding:
+      0 7px;
+
+    font-size:
+      10px;
+  }
+
+  .meskel-logo-text {
+    max-width:
+      calc(100vw - 138px);
+  }
+
+
+  /* More header separation */
+
   .meskel-hero-container {
     padding:
-      55px 0 70px;
+      112px 0 70px;
+  }
+
+
+  .meskel-badge {
+    margin-top:
+      8px;
+
+    margin-bottom:
+      16px;
   }
 
   .meskel-hero h1 {
@@ -2053,6 +2362,72 @@ body.meskel-modal-open {
   .meskel-section {
     padding:
       50px 0;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   320px - 350px
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .meskel-container {
+    width:
+      calc(100% - 16px);
+  }
+
+  .meskel-nav-content {
+    gap:
+      5px;
+  }
+
+  .meskel-logo {
+    gap:
+      6px;
+  }
+
+  .meskel-logo img {
+    width:
+      34px;
+
+    height:
+      34px;
+  }
+
+  .meskel-logo-text strong {
+    font-size:
+      10px;
+  }
+
+  .meskel-logo-text span {
+    font-size:
+      8px;
+  }
+
+  .meskel-logo-text {
+    max-width:
+      calc(100vw - 125px);
+  }
+
+  .meskel-language-btn {
+    min-width:
+      61px;
+
+    min-height:
+      36px;
+
+    padding:
+      0 5px;
+
+    font-size:
+      9px;
+  }
+
+  .meskel-hero-container {
+    padding:
+      108px 0 65px;
   }
 }
 
@@ -2149,7 +2524,6 @@ a:focus-visible {
 
 /* =========================================================
    FINAL MOBILE SAFETY
-   Prevent horizontal overflow
 ========================================================= */
 
 .meskel-page {
