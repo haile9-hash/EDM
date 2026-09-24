@@ -1492,7 +1492,7 @@ function MeskelSupport({ setIsHomePage }) {
 
 
                   <strong>
-                    0918545360
+                    963245
                   </strong>
 
 
@@ -1500,14 +1500,14 @@ function MeskelSupport({ setIsHomePage }) {
                     type="button"
                     onClick={() =>
                       copyToClipboard(
-                        "0918545360"
+                        "963245"
                       )
                     }
                     aria-label="Copy Telebirr number"
                   >
 
                     {copiedValue ===
-                    "0918545360" ? (
+                    "63245" ? (
 
                       <Check size={16} />
 
