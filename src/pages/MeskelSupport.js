@@ -506,7 +506,7 @@ function MeskelSupport({ setIsHomePage }) {
                 <span>
 
                   {t(
-                    "እንኳን ለብርሃነ መስቀል",
+                    "እንኳን ለብርሃነ መስቀሉ",
                     "Happy Meskel"
                   )}
 
