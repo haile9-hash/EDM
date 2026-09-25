@@ -525,7 +525,7 @@ function MeskelSupport({ setIsHomePage }) {
 
                   "እናት ደብረማርቆስ የሕፃናት መንደር በተለያዩ ምክንያቶች ወላጅ ያጡ ሕፃናትን በመልካም ኢትዮጵያዊነት እሴት ተንከባክቦ እያሳደገ የሚገኝ ሀገር በቀል የማኅበረሰብ ግብረሠናይ ድርጅት ነው።",
 
-                  "Enat Debremarkos Children’s Village is a local community-based charitable organization that cares for and raises children who have lost their parents for various reasons, nurturing them with strong Ethiopian values and a sense of good citizenship."
+                  "Enat Debremarkos Children’s Village is a community-based charity that cares for and raises children who have lost their parents, nurturing them with strong Ethiopian values and love."
 
                 )}
 
