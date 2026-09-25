@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 
 import {
@@ -34,15 +33,6 @@ import "../styles/MeskelSupport.css";
 
 /* =========================================================
    LOCAL IMAGES
-   ALL THESE FILES ARE INSIDE:
-
-   src/assets/images/
-
-   Files:
-   - children-village.jpg
-   - enat-logo.png
-   - cbe_qr.png
-   - telebirr_qr.png
 ========================================================= */
 
 import childrenVillageImage from "../assets/images/children-village.jpg";
@@ -52,12 +42,6 @@ import telebirrQr from "../assets/images/telebirr_qr.png";
 
 /* =========================================================
    PUBLIC VIDEO
-
-   File:
-   public/video/meskel.mp4
-
-   Browser URL:
-   /video/meskel.mp4
 ========================================================= */
 
 const meskelVideo = "/video/meskel.mp4";
@@ -535,6 +519,17 @@ function MeskelSupport({ setIsHomePage }) {
                 )}
 
               </p>
+               <p className="meskel-hero-description">
+
+                {t(
+
+                  "እናት ደብረማርቆስ የሕፃናት መንደር በተለያዩ ምክንያቶች ወላጅ ያጡ ሕፃናትን በመልካም ኢትዮጵያዊነት እሴት ተንከባክቦ እያሳደገ የሚገኝ ሀገር በቀል የማኅበረሰብ ግብረሠናይ ድርጅት ነው።",
+
+                  "Enat Debremarkos Children’s Village is a local community-based charitable organization that cares for and raises children who have lost their parents for various reasons, nurturing them with strong Ethiopian values and a sense of good citizenship."
+
+                )}
+
+              </p>
 
 
               <div className="meskel-hero-buttons">
@@ -573,6 +568,8 @@ function MeskelSupport({ setIsHomePage }) {
 
               <div className="meskel-hero-trust">
 
+                {/* FIRST TRUST ITEM */}
+
                 <div>
 
                   <ShieldCheck size={17} />
@@ -589,6 +586,8 @@ function MeskelSupport({ setIsHomePage }) {
                 </div>
 
 
+                {/* SECOND TRUST ITEM */}
+
                 <div>
 
                   <Smartphone size={17} />
@@ -598,6 +597,25 @@ function MeskelSupport({ setIsHomePage }) {
                     {t(
                       "ቀላል የክፍያ መንገዶች",
                       "Easy payment options"
+                    )}
+
+                  </span>
+
+                </div>
+
+
+                {/* =================================================
+                    MESKEL MOTTO
+                    BELOW BOTH TRUST ITEMS
+                ================================================= */}
+
+                <div className="meskel-motto">
+
+                  <span>
+
+                    {t(
+                      "ልጅ ከማኅፀን ብቻ ሳይሆን ከልብም ይወለዳል!",
+                      "A child is born not only from the womb, but also from the heart!"
                     )}
 
                   </span>
@@ -640,7 +658,7 @@ function MeskelSupport({ setIsHomePage }) {
               <span className="meskel-section-label">
 
                 {t(
-                  "የፍቅር ድጋፍ",
+                  "የፍቅር ስጦታ ለልጆች",
                   "A Gift of Love"
                 )}
 
@@ -1279,7 +1297,6 @@ function MeskelSupport({ setIsHomePage }) {
             }
           >
 
-
             {/* CLOSE */}
 
             <button
@@ -1507,7 +1524,7 @@ function MeskelSupport({ setIsHomePage }) {
                   >
 
                     {copiedValue ===
-                    "63245" ? (
+                    "963245" ? (
 
                       <Check size={16} />
 
