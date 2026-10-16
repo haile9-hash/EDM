@@ -22,7 +22,7 @@ const About = () => {
   });
 
   const targetCounts = {
-    totalChildren: 215,
+    totalChildren: 250,
     currentChildren: 50,
     staff: 5,
     adopted: 101
@@ -97,13 +97,13 @@ const About = () => {
           <div className="history-content">
             <div className="history-text">
               <p>
-                One of the greatest challenges we face is that abandoned children often arrive at our village in very fragile health. Without protection, proper nutrition, or medical care, many of them are extremely vulnerable. Some come to us suffering from malnutrition, while others are already battling severe infections. Within days of arrival, many quickly develop respiratory problems, high fever, and painful skin conditions.  
+Since its establishment in 2018, our organization has faced the challenge of caring for vulnerable and abandoned children who often arrive in fragile health and require immediate medical attention, proper nutrition, and emotional support. Through the generous contributions of individuals, community members, and volunteers, we provide shelter, food, healthcare, education, and psychosocial support to help children recover, grow, and build a brighter future.  
               </p>
               <p>
-               These early health struggles are heartbreaking, and despite our best efforts and urgent medical interventions, we have sadly lost 5 precious children to illnesses that were simply too advanced to treat in time.
+               To ensure a safe and permanent home for these children, the Debre Markos City Administration generously allocated two hectares of land free of charge for the development of a Children's Village. Recognizing the importance of accessible education, we also established our own licensed school, providing education from pre-primary to Grade 4 for both resident children and those from the surrounding community.
               </p>
               <p>
-                Since our founding, we have welcomed 215 children into our care. While we could not raise all of them within the village, we celebrate that 101 have found loving families through legal domestic adoption. At the same time, we continue to grieve the 5 children we lost, whose memories remind us of the urgent importance of immediate health support for every abandoned child who arrives at our doors.
+                Since our establishment, we have provided care, protection, and life-changing support to more than 250 vulnerable children. Today, we continue to provide comprehensive care for over 100 children aged between three months and ten years, creating a safe and loving environment where they can access essential services, develop their potential, and look forward to a better future.
               </p>
             </div>
             <div className="history-image">

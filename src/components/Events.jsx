@@ -13,6 +13,9 @@ import Ev7 from '../assets/images/Ev7.jpg';
 import Ev8 from '../assets/images/Ev8.jpg';
 import Ev10 from '../assets/images/Ev10.jpg';
 import Ev11 from '../assets/images/Ev11.png';
+import Event20 from '../assets/images/Event20.jpg';
+import Event21 from '../assets/images/Event21.jpg';
+import Event22 from '../assets/images/Event22.jpg';
 
 
 const Events = () => {
@@ -33,6 +36,41 @@ const Events = () => {
         <section id="photos" className="media-section">
           <h2 className="section-title">Event Photos</h2>
           <div className="media-gallery">
+ <div className="media-item">
+              <div className="media-container">
+                <img src={Event20} alt="Children's Day" />
+                <span className="media-type">Photo</span>
+              </div>
+              <div className="media-info">
+                <div className="media-date">October 16, 2026</div>
+                <div className="media-caption">partial view of the school and resident.</div>
+              </div>
+            </div>
+
+             <div className="media-item">
+              <div className="media-container">
+                <img src={Event21} alt="Children's Day" />
+                <span className="media-type">Photo</span>
+              </div>
+              <div className="media-info">
+                <div className="media-date">July 7, 2026</div>
+                <div className="media-caption">Graduation of the children.</div>
+              </div>
+            </div>
+
+             <div className="media-item">
+              <div className="media-container">
+                <img src={Event22} alt="Children's Day" />
+                <span className="media-type">Photo</span>
+              </div>
+              <div className="media-info">
+                <div className="media-date">July 24, 2026</div>
+                <div className="media-caption">Ethio Telecom providing support to the organization.</div>
+              </div>
+            </div>
+
+
+
            <div className="media-item">
               <div className="media-container">
                 <img src={Ev1} alt="Children's Day" />
