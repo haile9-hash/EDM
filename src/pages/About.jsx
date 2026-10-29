@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 
 import pic5 from "../assets/images/pic5.jpg";
@@ -16,10 +15,15 @@ import ev9 from "../assets/images/Ev9.jpg";
 
 import "../styles/About.css";
 
-/* =========================================
-   BOARD LEADERSHIP
-========================================= */
+// Counter configuration: defined outside the component
+// so these values remain stable between renders.
+const TARGET_TOTAL_CHILDREN = 250;
+const TARGET_CURRENT_CHILDREN = 50;
+const TARGET_STAFF = 5;
+const TARGET_ADOPTED = 101;
+const COUNTER_DURATION = 2000;
 
+// Board leadership
 const boardLeadership = [
   {
     name: "Ato Teshome Wale",
@@ -44,10 +48,7 @@ const boardLeadership = [
   },
 ];
 
-/* =========================================
-   BOARD MEMBERS
-========================================= */
-
+// Board members
 const boardMembers = [
   {
     name: "Dr. Abinet Sisay",
@@ -93,10 +94,7 @@ const boardMembers = [
   },
 ];
 
-/* =========================================
-   AMBASSADORS
-========================================= */
-
+// Ambassadors
 const ambassadors = [
   {
     name: "Artist Bezawit Mesfen",
@@ -107,14 +105,10 @@ const ambassadors = [
   },
 ];
 
-/* =========================================
-   REUSABLE PROFILE CARD
-========================================= */
-
+// Reusable profile card
 const ProfileCard = ({ member, ambassador = false }) => (
   <article
     className={`role-item${ambassador ? " ambassador-card" : ""}`}
-    key={member.name}
   >
     <div className="role-image">
       <img
@@ -134,10 +128,7 @@ const ProfileCard = ({ member, ambassador = false }) => (
   </article>
 );
 
-/* =========================================
-   ABOUT PAGE
-========================================= */
-
+// About page
 const About = () => {
   const [activeRole, setActiveRole] = useState("all");
 
@@ -148,52 +139,52 @@ const About = () => {
     adopted: 0,
   });
 
-  const targetCounts = {
-    totalChildren: 250,
-    currentChildren: 50,
-    staff: 5,
-    adopted: 101,
-  };
-
-  const duration = 2000;
   const animationFrameId = useRef(null);
 
+  // Animated counters
   useEffect(() => {
     let startTime = null;
+    let frameId;
 
     const animateCounters = (timestamp) => {
-      if (!startTime) startTime = timestamp;
+      if (startTime === null) {
+        startTime = timestamp;
+      }
 
       const elapsedTime = timestamp - startTime;
-      const progress = Math.min(elapsedTime / duration, 1);
+      const progress = Math.min(
+        elapsedTime / COUNTER_DURATION,
+        1
+      );
 
       setCounts({
         totalChildren: Math.floor(
-          progress * targetCounts.totalChildren
+          progress * TARGET_TOTAL_CHILDREN
         ),
         currentChildren: Math.floor(
-          progress * targetCounts.currentChildren
+          progress * TARGET_CURRENT_CHILDREN
         ),
-        staff: Math.floor(progress * targetCounts.staff),
-        adopted: Math.floor(progress * targetCounts.adopted),
+        staff: Math.floor(progress * TARGET_STAFF),
+        adopted: Math.floor(progress * TARGET_ADOPTED),
       });
 
       if (progress < 1) {
-        animationFrameId.current =
-          requestAnimationFrame(animateCounters);
+        frameId = requestAnimationFrame(animateCounters);
+        animationFrameId.current = frameId;
       }
     };
 
-    animationFrameId.current =
-      requestAnimationFrame(animateCounters);
+    frameId = requestAnimationFrame(animateCounters);
+    animationFrameId.current = frameId;
 
     return () => {
-      if (animationFrameId.current) {
+      if (animationFrameId.current !== null) {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
   }, []);
 
+  // Reusable profile grid
   const renderProfiles = (members, ambassador = false) => (
     <div
       className={`roles-grid${
@@ -210,12 +201,27 @@ const About = () => {
     </div>
   );
 
+  // Reusable section heading
+  const renderGroupHeading = (
+    title,
+    subtitle,
+    extraClass = ""
+  ) => (
+    <div className={`roles-group-heading ${extraClass}`.trim()}>
+      <span className="roles-group-line" />
+
+      <div>
+        <h3>{title}</h3>
+        <p>{subtitle}</p>
+      </div>
+
+      <span className="roles-group-line" />
+    </div>
+  );
+
   return (
     <div className="about-container">
-      {/* =====================================
-          OUR HISTORY
-      ===================================== */}
-
+      {/* OUR HISTORY */}
       <section id="history" className="content-section">
         <div className="container">
           <h2 className="section-title">Our History</h2>
@@ -262,10 +268,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* =====================================
-          IMMEDIATE CHALLENGE
-      ===================================== */}
-
+      {/* IMMEDIATE CHALLENGE */}
       <section id="challenge" className="content-section">
         <div className="container">
           <h2 className="section-title">Immediate Challenge</h2>
@@ -313,13 +316,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* =====================================
-          GOALS AND VALUES
-      ===================================== */}
-
+      {/* GOALS AND VALUES */}
       <section id="goals" className="content-section">
         <div className="container">
-          <h2 className="section-title">Our Goals &amp; Values</h2>
+          <h2 className="section-title">
+            Our Goals &amp; Values
+          </h2>
 
           <div className="goals-container">
             <div className="goal-card">
@@ -355,18 +357,22 @@ const About = () => {
                   to sustainably improve the lives of abandoned
                   children.
                 </li>
+
                 <li>
                   <strong>Authentic:</strong> We are open, honest,
                   and transparent in everything we do.
                 </li>
+
                 <li>
                   <strong>Learning:</strong> We respect diversity,
                   listen, and learn from others.
                 </li>
+
                 <li>
                   <strong>Ambitious:</strong> We want to achieve
                   lasting change for children and families.
                 </li>
+
                 <li>
                   <strong>Commitment:</strong> We stand firm in
                   achieving our goals.
@@ -394,11 +400,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* =====================================
-          ROLES AND RESPONSIBILITIES
-      ===================================== */}
-
-      <section id="roles" className="content-section roles-section">
+      {/* ROLES AND RESPONSIBILITIES */}
+      <section
+        id="roles"
+        className="content-section roles-section"
+      >
         <div className="container">
           <div className="roles-heading">
             <span className="roles-eyebrow">
@@ -417,7 +423,6 @@ const About = () => {
           </div>
 
           {/* FILTER BUTTONS */}
-
           <div
             className="roles-filters"
             role="group"
@@ -469,114 +474,64 @@ const About = () => {
           </div>
 
           {/* ALL TEAM MEMBERS */}
-
           {activeRole === "all" && (
             <>
-              <div className="roles-group-heading">
-                <span className="roles-group-line" />
-
-                <div>
-                  <h3>Board Leadership</h3>
-                  <p>
-                    The leaders guiding our organization.
-                  </p>
-                </div>
-
-                <span className="roles-group-line" />
-              </div>
+              {renderGroupHeading(
+                "Board Leadership",
+                "The leaders guiding our organization."
+              )}
 
               {renderProfiles(boardLeadership)}
 
-              <div className="roles-group-heading board-members-heading">
-                <span className="roles-group-line" />
-
-                <div>
-                  <h3>Board Members</h3>
-                  <p>
-                    Dedicated professionals serving our mission.
-                  </p>
-                </div>
-
-                <span className="roles-group-line" />
-              </div>
+              {renderGroupHeading(
+                "Board Members",
+                "Dedicated professionals serving our mission.",
+                "board-members-heading"
+              )}
 
               {renderProfiles(boardMembers)}
 
-              <div className="roles-group-heading ambassador-heading">
-                <span className="roles-group-line" />
-
-                <div>
-                  <h3>Our Ambassador</h3>
-                  <p>
-                    Inspiring support for our children's future.
-                  </p>
-                </div>
-
-                <span className="roles-group-line" />
-              </div>
+              {renderGroupHeading(
+                "Our Ambassador",
+                "Inspiring support for our children's future.",
+                "ambassador-heading"
+              )}
 
               {renderProfiles(ambassadors, true)}
             </>
           )}
 
           {/* BOARD LEADERSHIP ONLY */}
-
           {activeRole === "leadership" && (
             <>
-              <div className="roles-group-heading">
-                <span className="roles-group-line" />
-
-                <div>
-                  <h3>Board Leadership</h3>
-                  <p>
-                    The leaders guiding our organization.
-                  </p>
-                </div>
-
-                <span className="roles-group-line" />
-              </div>
+              {renderGroupHeading(
+                "Board Leadership",
+                "The leaders guiding our organization."
+              )}
 
               {renderProfiles(boardLeadership)}
             </>
           )}
 
           {/* BOARD MEMBERS ONLY */}
-
           {activeRole === "members" && (
             <>
-              <div className="roles-group-heading">
-                <span className="roles-group-line" />
-
-                <div>
-                  <h3>Board Members</h3>
-                  <p>
-                    Dedicated professionals serving our mission.
-                  </p>
-                </div>
-
-                <span className="roles-group-line" />
-              </div>
+              {renderGroupHeading(
+                "Board Members",
+                "Dedicated professionals serving our mission."
+              )}
 
               {renderProfiles(boardMembers)}
             </>
           )}
 
           {/* AMBASSADORS ONLY */}
-
           {activeRole === "ambassadors" && (
             <>
-              <div className="roles-group-heading">
-                <span className="roles-group-line" />
-
-                <div>
-                  <h3>Our Ambassador</h3>
-                  <p>
-                    Inspiring support for our children's future.
-                  </p>
-                </div>
-
-                <span className="roles-group-line" />
-              </div>
+              {renderGroupHeading(
+                "Our Ambassador",
+                "Inspiring support for our children's future."
+              )}
 
               {renderProfiles(ambassadors, true)}
             </>
@@ -584,11 +539,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* =====================================
-          CURRENT STATUS
-      ===================================== */}
-
-      <section id="status" className="content-section status-section">
+      {/* CURRENT STATUS */}
+      <section
+        id="status"
+        className="content-section status-section"
+      >
         <div className="container">
           <h2 className="section-title">Current Status</h2>
 
